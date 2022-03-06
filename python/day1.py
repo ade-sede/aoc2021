@@ -31,6 +31,24 @@ def part1(puzzle_input):
       return False
 
   return sum(1 if depth_increase(index) else 0 for index in range(nb_measurements))
+
+def part2(puzzle_input):
+  """
+  Day 01, Part 2
+  """
+
+  measurements = [int(line) for line in puzzle_input]
+  nb_measurements = len(puzzle_input)
+
+  def depth_increase(index):
+    """
+    With window size: 3:
+    Is the depth of the next window higher than the depth of the current window ?
+    """
+    try:
+      current_window = measurements[index : index + 3]
+      next_window = measurements[index + 1 : index + 4]
+      return sum(next_window) > sum(current_window)
     except IndexError:
       return False
 
@@ -38,3 +56,4 @@ def part1(puzzle_input):
 
 
 print(part1(get_puzzle_input(DAY)))
+print(part2(get_puzzle_input(DAY)))
