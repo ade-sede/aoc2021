@@ -46,9 +46,9 @@ def part2(puzzle_input):
     Is the depth of the next window higher than the depth of the current window ?
     """
     try:
-      current_window = measurements[index : index + 3]
-      next_window = measurements[index + 1 : index + 4]
-      return sum(next_window) > sum(current_window)
+      current_window_depth = measurements[index] + measurements[index + 1] + measurements[index + 2]
+      next_window_depth = measurements[index + 1] + measurements[index + 2] + measurements[index + 3]
+      return next_window_depth > current_window_depth
     except IndexError:
       return False
 
