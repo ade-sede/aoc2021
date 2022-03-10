@@ -57,3 +57,6 @@ def part2(puzzle_input):
 
 print(part1(get_puzzle_input(DAY)))
 print(part2(get_puzzle_input(DAY)))
+
+# I modified this file.
+# Hopefully someone fixed the index issues there was previsously some lines above.
